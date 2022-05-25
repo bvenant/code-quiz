@@ -93,4 +93,7 @@ var timer = document.querySelector("#timer");
 
 // Start Quiz 
 var start = document.querySelector("#start");
+var startBtn = document.querySelector("#startBtn");
+
+
 
