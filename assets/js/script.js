@@ -120,20 +120,14 @@ var points = function() {
 // Timer
 var timerEl = function() {
     var timeInterval = setInterval(() => {
-        if (end === false) {
+        if (timeLeft > 1 && activeIndex !==5) {
             timer.textContent = timeLeft;
             timeLeft --;
             return timeLeft;
         } else {
-            timer.textContent = "";
             clearInterval(timeInterval);
         }
     }, 1000);
-    
-    console.log("Time Starts NOW")
-    if (end === true){
-        timer.textContent = timeLeft;
-    }
 };
 
 // Start Quiz and start timer
