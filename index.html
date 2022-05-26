@@ -13,7 +13,7 @@
         <!-- Contains High score and Timer -->
         <div class="row">
             <div class="col-md-6 text-left">
-                <a href="#" id="highscorelink">Highscores</a>
+                <a href="#" id="highscorelink">High scores</a>
             </div>
             <div class="col-md-6 text-right">
                 Timer: <span class="timer"></span></h2>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <!-- Questions -->
-        <div class="row">
+        <div class="question-container">
             <h1 id="questionTle"></h1>
             <ul class="buttons">
                 <li><button id="btn1"></button></li>
@@ -39,6 +39,8 @@
                 <li><button id="btn3"></button></li>
             </ul>
         </div>
+        <div id="display" class="correct hide"></div>
+        <div id="display2" class="incorrect hide"></div>
         <!-- Quiz is over. Score page -->
         <div class="row">
             <h3>Final Score <span id="finalscore"></span></h3>

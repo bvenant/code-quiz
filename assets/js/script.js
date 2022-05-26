@@ -81,7 +81,6 @@ var questions = [
     },
 ];
 
-var checkAns = document.querySelector("#checkAns");
 
 //Score 
 var highScore = document.querySelector("#highScore");
@@ -90,6 +89,15 @@ var finalScore = document.querySelector("#finalScore");
 var submitInl = document.querySelector("#submitInl");
 var initals = document.querySelector("#initals");
 var questionTle = document.querySelector("#questionTle");
+
+// Questions
+var answer1 = document.querySelector("btn1");
+var answer2 = document.querySelector("btn2");
+var answer3 = document.querySelector("btn3");
+var answer4 = document.querySelector("btn4");
+var questionScore = 0;
+var displayEl = document.querySelector('display');
+var displayEl2 = document.querySelector('display2');
 
 
 // Time and Points
@@ -126,6 +134,34 @@ var timerEl = function() {
     }
 };
 
+var questionEl = function(index) {
 
+    var currentQuestion = questions[questionScore]
+    question.textContent = currentQuestion.question;
 
+    answer1.textContent = currentQuestion.options[0];
+    answer2.textContent = currentQuestion.options[1];
+    answer3.textContent = currentQuestion.options[2];
+    answer4.textContent = currentQuestion.options[3];
+};
 
+var checkAns = function(event) {
+    var correctAnswer = questions[questionScore].correctAnswer
+    var currentAnswer = event.target.textContent   
+        
+    if (currentAnswer === correctAnswer) {
+        displayEl2.classList.add('hide')
+        displayEl.textContent = "Correct!"
+    } else {
+        displayEl.classList.add('hide')
+        displayEl2.textContent = "-----------Wrong!-----------"
+        timeLeft -= 15;
+    }
+    
+    questionCounter++;
+    if(questionCounter === questions.length){
+        endGame();
+    } else {
+    createQuestionElement();
+}
+}
