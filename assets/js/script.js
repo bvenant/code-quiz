@@ -86,10 +86,10 @@ var questions = [
 var score = document.querySelector("score");
 var highScore = document.querySelector("#highScore");
 var scoreList = document.querySelector("#scoreList");
-var finalScore = document.querySelector("#finalScore");
+var finalScore = document.querySelector("finalScore");
 var submitInl = document.querySelector("#submitInl");
 var initals = document.querySelector("#initals");
-var questionTle = document.querySelector("#questionTle");
+var questionTle = document.querySelector("questionTle");
 var activeIndex = 1;
 
 // Questions
@@ -138,7 +138,7 @@ startButton.addEventListener("click", function () {
   
   questions.addEventListener("click", function (event) {
     if (activeIndex === 5) {
-      options.textContent = "CONGRATULATIONS!  GAME OVER";
+      options.textContent = "Nice Job!  GAME OVER";
       score.textContent = timeLeft;
     } else if (
       event.target.textContent !== questions[activeIndex - 1].answer
