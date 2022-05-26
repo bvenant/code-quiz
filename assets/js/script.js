@@ -83,32 +83,33 @@ var questions = [
 
 
 //Score 
-var score = document.querySelector("score");
-var highScore = document.querySelector("#highScore");
-var scoreList = document.querySelector("#scoreList");
-var finalScore = document.querySelector("finalScore");
-var submitInl = document.querySelector("#submitInl");
-var initals = document.querySelector("#initals");
-var questionTle = document.querySelector("questionTle");
+var score = document.getElementById("score");
+var highScore = document.getElementById("#highScore");
+var scoreList = document.getElementById("#scoreList");
+var finalScore = document.getElementById("finalScore");
+var submitInl = document.getElementById("#submitInl");
+var initals = document.getElementById("#initals");
 var activeIndex = 1;
 
 // Questions
-var answerList = document.querySelector("answerList")
-var answer1 = document.querySelector("btn1");
-var answer2 = document.querySelector("btn2");
-var answer3 = document.querySelector("btn3");
-var answer4 = document.querySelector("btn4");
+var answerList = document.getElementById("answerList")
+var answer1 = document.getElementById("btn1");
+var answer2 = document.getElementById("btn2");
+var answer3 = document.getElementById("btn3");
+var answer4 = document.getElementById("btn4");
 var questionScore = 0;
+var myQuestions = document.getElementById("myQuestions");
+var questionTle = document.getElementById("questionTle");
 
 
 // Time and Points
-var timer = document.querySelector("timer");
+var timer = document.getElementById("timer");
 var timeLeft = 80
 var totalPoints = 0;
 
 // Start Quiz 
-var start = document.querySelector("#start");
-var startButton = document.querySelector("#startButton");
+var start = document.getElementById("start");
+var startButton = document.getElementById("startButton");
 
 
 // Points
@@ -136,7 +137,7 @@ startButton.addEventListener("click", function () {
     questionEl(questions[0]);
   });
   
-  questions.addEventListener("click", function (event) {
+myQuestions.addEventListener("click", function (event) {
     if (activeIndex === 5) {
       options.textContent = "Nice Job!  GAME OVER";
       score.textContent = timeLeft;
@@ -170,7 +171,7 @@ var questionEl = function(currentQuestion) {
     questions.append(answerList);
 };
 
-// Enters initials and score
-submitInl.addEventListener("click", function(event){
+// // Enters initials and score
+// submitInl.addEventListener("click", function(event){
 
-})
+// })
