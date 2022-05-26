@@ -83,39 +83,41 @@ var questions = [
 
 
 //Score 
+var score = document.querySelector("score");
 var highScore = document.querySelector("#highScore");
 var scoreList = document.querySelector("#scoreList");
 var finalScore = document.querySelector("#finalScore");
 var submitInl = document.querySelector("#submitInl");
 var initals = document.querySelector("#initals");
 var questionTle = document.querySelector("#questionTle");
+var activeIndex = 1;
 
 // Questions
+var answerList = document.querySelector("answerList")
 var answer1 = document.querySelector("btn1");
 var answer2 = document.querySelector("btn2");
 var answer3 = document.querySelector("btn3");
 var answer4 = document.querySelector("btn4");
 var questionScore = 0;
-var displayEl = document.querySelector('display');
-var displayEl2 = document.querySelector('display2');
 
 
 // Time and Points
-var timer = document.querySelector("#timer");
+var timer = document.querySelector("timer");
 var timeLeft = 80
 var totalPoints = 0;
 
 // Start Quiz 
 var start = document.querySelector("#start");
-var startBtn = document.querySelector("#startBtn");
+var startButton = document.querySelector("#startButton");
 
 
-// Functions
+// Points
 var points = function() {
     totalPoints = totalPoints + 5;
     console.log("You have " + totalPoints + " points!");
 };
 
+// Timer
 var timerEl = function() {
     var timeInterval = setInterval(() => {
         if (end === false) {
@@ -134,34 +136,47 @@ var timerEl = function() {
     }
 };
 
-var questionEl = function(index) {
+// Start Quiz and start timer
+startButton.addEventListener("click", function () {
+    timerEl();
+    questionEl(questions[0]);
+  });
+  
+  questions.addEventListener("click", function (event) {
+    if (activeIndex === 5) {
+      options.textContent = "CONGRATULATIONS!  GAME OVER";
+      score.textContent = timeLeft;
+    } else if (
+      event.target.textContent !== questions[activeIndex - 1].answer
+    ) {
+      options.textContent = "Try again.";
+      timeLeft -= 5;
+    } else {
+      options.textContent = "You are correct!";
+      console.log(timeLeft);
+      activeIndex++;
+      questionEl(questions[activeIndex - 1]);
+    }
+  });
 
-    var currentQuestion = questions[questionScore]
-    question.textContent = currentQuestion.question;
+// Questions
+var questionEl = function(currentQuestion) {
 
-    answer1.textContent = currentQuestion.options[0];
-    answer2.textContent = currentQuestion.options[1];
-    answer3.textContent = currentQuestion.options[2];
-    answer4.textContent = currentQuestion.options[3];
+    questionTle.textContent = currentQuestion.question;
+    answer1.textContent = currentQuestion.options[1];
+    answer2.textContent = currentQuestion.options[2];
+    answer3.textContent = currentQuestion.options[3];
+    answer4.textContent = currentQuestion.options[4];
+
+    answerList.append(answer1);
+    answerList.append(answer2);
+    answerList.append(answer3);
+    answerList.append(answer4);
+    questions.append(questionTle);
+    questions.append(answerList);
 };
 
-var checkAns = function(event) {
-    var correctAnswer = questions[questionScore].correctAnswer
-    var currentAnswer = event.target.textContent   
-        
-    if (currentAnswer === correctAnswer) {
-        displayEl2.classList.add('hide')
-        displayEl.textContent = "Correct!"
-    } else {
-        displayEl.classList.add('hide')
-        displayEl2.textContent = "-----------Wrong!-----------"
-        timeLeft -= 15;
-    }
-    
-    questionCounter++;
-    if(questionCounter === questions.length){
-        endGame();
-    } else {
-    createQuestionElement();
-}
-}
+// Enters initials and score
+submitInl.addEventListener("click", function(event){
+
+})
