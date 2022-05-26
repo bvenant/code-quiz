@@ -81,7 +81,7 @@ var questions = [
     },
 ];
 
-var answer = document.querySelector("#answer");
+var checkAns = document.querySelector("#checkAns");
 
 //Score 
 var highScore = document.querySelector("#highScore");
@@ -92,7 +92,7 @@ var initals = document.querySelector("#initals");
 var questionTle = document.querySelector("#questionTle");
 
 
-// Time and Point
+// Time and Points
 var timer = document.querySelector("#timer");
 var timeLeft = 80
 var totalPoints = 0;
