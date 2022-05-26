@@ -87,13 +87,45 @@ var answer = document.querySelector("#answer");
 var highScore = document.querySelector("#highScore");
 var scoreList = document.querySelector("#scoreList");
 var finalScore = document.querySelector("#finalScore");
+var submitInl = document.querySelector("#submitInl");
+var initals = document.querySelector("#initals");
+var questionTle = document.querySelector("#questionTle");
 
-// Time 
+
+// Time and Point
 var timer = document.querySelector("#timer");
+var timeLeft = 80
+var totalPoints = 0;
 
 // Start Quiz 
 var start = document.querySelector("#start");
 var startBtn = document.querySelector("#startBtn");
+
+
+// Functions
+var points = function() {
+    totalPoints = totalPoints + 5;
+    console.log("You have " + totalPoints + " points!");
+};
+
+var timerEl = function() {
+    var timeInterval = setInterval(() => {
+        if (end === false) {
+            timer.textContent = timeLeft;
+            timeLeft --;
+            return timeLeft;
+        } else {
+            timer.textContent = "";
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+    
+    console.log("Time Starts NOW")
+    if (end === true){
+        timer.textContent = timeLeft;
+    }
+};
+
 
 
 
