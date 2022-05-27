@@ -100,6 +100,8 @@ var answer4 = document.getElementById("btn4");
 var questionScore = 0;
 var myQuestions = document.getElementById("myQuestions");
 var questionTle = document.getElementById("questionTle");
+var options = document.getElementById("options");
+
 
 
 // Time and Points
@@ -120,7 +122,7 @@ var points = function() {
 
 // Timer
 var timerEl = function() {
-    var timeInterval = setInterval(() => {
+    var timeInterval = setInterval(function () {
         if (timeLeft > 1 && activeIndex !==5) {
             timer.textContent = timeLeft;
             timeLeft --;
@@ -158,17 +160,17 @@ myQuestions.addEventListener("click", function (event) {
 var questionEl = function(currentQuestion) {
 
     questionTle.textContent = currentQuestion.question;
-    answer1.textContent = currentQuestion.options[1];
-    answer2.textContent = currentQuestion.options[2];
-    answer3.textContent = currentQuestion.options[3];
-    answer4.textContent = currentQuestion.options[4];
+    answer1.textContent = currentQuestion.options[0];
+    answer2.textContent = currentQuestion.options[1];
+    answer3.textContent = currentQuestion.options[2];
+    answer4.textContent = currentQuestion.options[3];
 
     answerList.append(answer1);
     answerList.append(answer2);
     answerList.append(answer3);
     answerList.append(answer4);
-    questions.append(questionTle);
-    questions.append(answerList);
+    // questions.append(questionTle);
+    // questions.append(answerList);
 };
 
 // // Enters initials and score

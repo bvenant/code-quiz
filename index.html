@@ -16,7 +16,7 @@
                 <a href="#" id="highscorelink">High scores</a>
             </div>
             <div class="col-md-6 text-right">
-                Timer: <span class="timer"></span></h2>
+                Timer: <span id="timer"></span></h2>
             </div>
         </div>
     </header>
@@ -30,14 +30,15 @@
             </div>
         </div>
         <!-- Questions -->
-        <div class="myQuestions">
-            <h1 id="questionTle"></h1>
-            <ul class="answerList">
-                <li><button id="btn1"></button></li>
-                <li><button id="btn2"></button></li>
-                <li><button id="btn3"></button></li>
-                <li><button id="btn3"></button></li>
+        <div id="myQuestions">
+            <h2 id="questionTle"></h2>
+            <ul id="answerList">
+                <li id="options"><button id="btn1"></button></li>
+                <li id="options"><button id="btn2"></button></li>
+                <li id="options"><button id="btn3"></button></li>
+                <li id="options"><button id="btn4"></button></li>
             </ul>
+            <div id="answer"></div>
         </div>
         <!-- Quiz is over. Score page -->
         <div class="row">
@@ -45,7 +46,7 @@
         </div>
         <div class="input-group">
             <label for="initials">Enter Initials:</label>
-            <input type="text" name="name"><button type="submit">Submit</button>
+            <input type="text"><button type="submit">Submit</button>
         </div>
         <div id="highscores">
             <h3>High Scores</h3>
