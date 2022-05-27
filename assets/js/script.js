@@ -7,7 +7,7 @@ var questions = [
         "C. Web",
         "D. Server",
         ],
-        answer: "C"
+        answer: "C. Web"
     },
     {
         question: "Which type of JavaScript Language is __?",
@@ -17,7 +17,7 @@ var questions = [
         "C. Functional programming",
         "D. All of the above",
         ],
-        answer:"b"
+        answer:"B. Object-based"
     },
     {
         question: "In which HTML element, we put the JavaScript code?",
@@ -27,7 +27,7 @@ var questions = [
         "C. <script>...</script>",
         "D. <css>...</css>",
         ],
-        answer: "C"
+        answer: "C. <script>...</script>"
     },
     {
         question: "JavaScript code can be written in ____.",
@@ -37,7 +37,7 @@ var questions = [
         "C. HTML document directly",
         "D. In style sheets (.css file)",
         ],
-        answer: "B"
+        answer: "B. JavaScript file and in HTML document directly"
     },
     {
         question: "Which symbol is used separate JavaScript statements?",
@@ -47,7 +47,7 @@ var questions = [
         "C. Hyphen (_)",
         "D. Semicolon (;)",
         ],
-        answer: "D"
+        answer: "D. Semicolon (;)"
     },
     {
         question: "JavaScript ignores?",
@@ -57,7 +57,7 @@ var questions = [
         "C. spaces",
         "D. All of the above",
         ],
-        answer: "D"
+        answer: "D. All of the above"
     },
     {
         question: "Which JavaScript method is used to access an HTML element by id?",
@@ -67,7 +67,7 @@ var questions = [
         "C. getElementById(id)",
         "D. elementById(id)",
         ],
-        answer: "C"
+        answer: "C. getElementById(id)"
     },
     {
         question: "Which JavaScript method is used to write HTML output?",
@@ -77,10 +77,9 @@ var questions = [
         "C. console.log()",
         "D. document.writeHTML()",
         ],
-        answer: "A"
+        answer: "A. document.write()"
     },
 ];
-
 
 //Score 
 var score = document.getElementById("score");
