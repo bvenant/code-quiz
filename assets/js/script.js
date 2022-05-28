@@ -83,12 +83,14 @@ var questions = [
 
 //Score 
 var score = document.getElementById("score");
-var highScore = document.getElementById("#highScore");
-var scoreList = document.getElementById("#scoreList");
+var highScore = document.getElementById("highScore");
+var scoreList = document.getElementById("scoreList");
 var finalScore = document.getElementById("finalScore");
-var submitInl = document.getElementById("#submitInl");
-var initals = document.getElementById("#initals");
+var submitInl = document.getElementById("submitInl");
+var initials = document.getElementById("initals");
+var viewScores = document.getElementById("viewScores");
 var activeIndex = 1;
+var quiz = [];
 
 // Questions
 var answerList = document.getElementById("answerList")
@@ -173,6 +175,58 @@ var questionEl = function(currentQuestion) {
 };
 
 // // Enters initials and score
-// submitInl.addEventListener("click", function(event){
+function storeScores(event) {
+    event.preventDefault();
+    if (initialInput.value === "") {
+        alert("Please enter your initials!");
+        return;
+  }
 
-// })
+    var savedScores = localStorage.getItem("high scores");
+    var allScoresArray;
+
+    if (savedScores === null) {
+    allScoresArray = [];
+    } else {
+    allScoresArray = JSON.parse(savedScores)
+    }
+
+    var playerScore = {
+        initials: initialInput.value,
+        score: finalScore.textContent
+    };
+
+    console.log(playerScore);
+    allScoresArray.push(playerScore);
+
+    var scoresString = JSON.stringify(allScoresArray);
+    window.localStorage.setItem("high scores", scoresString);
+
+    showScores();
+};
+
+var i = 0;
+function showScores() {
+    var savedScores = localStorage.getItem("high scores");
+
+    if (savedScores === null) {
+        return;
+    }
+    console.log(savedScores);
+
+    var storeScores = JSON.parse(savedScores);
+
+    for (; i < storeScores.length; i++) {
+        var newHighScores = document.createElement("p");
+        newHighScores.innerHTML = storeScores[i].initials + ": " + storeScores[i].score;
+        listOfScores.appendChild(newHighScores);
+    }
+};
+
+submitInl.addEventListener("click", function(event){ 
+    storeScores(event);
+});
+
+viewScores.addEventListener("click", function(event) { 
+    showScores(event);
+});

@@ -1,1 +1,6 @@
 /* Begin Button*/
+.btn:focus, .btn:active, .btn:visited {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #343a40;
+}
