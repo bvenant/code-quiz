@@ -29,7 +29,8 @@ THEN I can save my initials and score
 
 
 
- 
+ ![quiz](https://user-images.githubusercontent.com/103866289/170904585-b5b1adf2-f5bb-4534-a652-4a615d93f148.png)
+
 
 - - -  
 
