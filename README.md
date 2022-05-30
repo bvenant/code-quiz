@@ -36,6 +36,6 @@ THEN I can save my initials and score
 ### Links  
  
 
-[Password Generator Website](https://bvenant.github.io/)  
+[Code Quiz Challenge Website](https://bvenant.github.io/code-quiz/)  
 
-[Password Generator repository](https://github.com/bvenant/code-quiz) 
+[Code Quiz Challenge repository](https://github.com/bvenant/code-quiz) 
