@@ -107,7 +107,7 @@ var options = document.getElementById("options");
 
 // Time and Points
 var timer = document.getElementById("timer");
-var timeLeft = 10
+var timeLeft = 20
 var totalPoints = 0;
 
 // Start Quiz 
